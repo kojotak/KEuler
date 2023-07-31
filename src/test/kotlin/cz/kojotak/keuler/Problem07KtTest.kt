@@ -3,7 +3,7 @@ package cz.kojotak.keuler
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
-internal class Problem7KtTest{
+internal class Problem07KtTest{
 
     @Test
     fun primeNumberInSieveOfEratosthenes6th(){

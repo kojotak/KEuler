@@ -1,7 +1,10 @@
 package cz.kojotak.keuler
 
-fun smallestMultiple() : Long = smallestEvenlyDivisible(20)
 
+class Problem05 : EulerProblem{
+    override fun solve() = smallestEvenlyDivisible(20)
+
+}
 fun smallestEvenlyDivisible(maxConsecutive: Int) : Long {
     for(result in 1L .. Long.MAX_VALUE){
         for(divisor in 1L .. maxConsecutive){

@@ -2,7 +2,9 @@ package cz.kojotak.keuler
 
 import kotlin.math.sqrt
 
-fun largestPrimeFactor() : Long = largestPrimeFactor(600851475143)
+class Problem03 : EulerProblem{
+    override fun solve()= largestPrimeFactor(600851475143)
+}
 
 fun largestPrimeFactor(number: Long) : Long = distinctPrimeFactors(number).last()
 

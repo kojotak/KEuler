@@ -1,6 +1,8 @@
 package cz.kojotak.keuler
 
-fun sumSquareDifference() : Long = sumSquareDifference(100)
+class Problem06 : EulerProblem {
+    override fun solve() = sumSquareDifference(100)
+}
 
 fun sumSquareDifference(size: Int) : Long {
     var sumOfSquares = 0L

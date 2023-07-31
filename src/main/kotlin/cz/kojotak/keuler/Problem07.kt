@@ -1,6 +1,8 @@
 package cz.kojotak.keuler
 
-fun prime10001(): Long = nthPrimeNumberInSieveOfEratosthenes(10001)
+class Problem07 : EulerProblem {
+    override fun solve() = nthPrimeNumberInSieveOfEratosthenes(10001)
+}
 
 const val MAX_PRIME_NUMBER = 1_000_000
 fun nthPrimeNumberInSieveOfEratosthenes(nthOrder: Int): Long {

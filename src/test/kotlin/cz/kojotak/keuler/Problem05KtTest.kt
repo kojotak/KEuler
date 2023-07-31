@@ -3,7 +3,7 @@ package cz.kojotak.keuler
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
-internal class Problem5KtTest{
+internal class Problem05KtTest{
 
     @Test
     fun smallestMultipleEvenlyDivisible10(){

@@ -3,7 +3,7 @@ package cz.kojotak.keuler
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
-internal class Problem6KtTest{
+internal class Problem06KtTest{
 
     @Test
     fun sumSquareDifferenceOf10(){
