@@ -1,7 +1,4 @@
-import cz.kojotak.keuler.evenFibonacciNumbers
-import cz.kojotak.keuler.largestPalindromeProduct
-import cz.kojotak.keuler.largestPrimeFactor
-import cz.kojotak.keuler.multipliesOf3or5
+import cz.kojotak.keuler.*
 
 fun main() {
     println("Programming exercises in kotlin from https://projecteuler.net\n")
@@ -10,4 +7,5 @@ fun main() {
     println("Problem 2: ${evenFibonacciNumbers()}")
     println("Problem 3: ${largestPrimeFactor()}")
     println("Problem 4: ${largestPalindromeProduct()}")
+    println("Problem 5: ${smallestMultiple()}")
 }

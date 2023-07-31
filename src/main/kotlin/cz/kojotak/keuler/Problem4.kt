@@ -10,7 +10,7 @@ fun largestPalindromeProduct() : Long {
             }
         }
     }
-    return largestPalindrome
+    return largestPalindrome.takeIf { it > 0 } ?: throw SolutionNotFoundException()
 }
 
 fun isPalindrome(number: Number) : Boolean = isPalindrome(number.toString())
