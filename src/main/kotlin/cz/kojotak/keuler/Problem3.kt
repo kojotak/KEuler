@@ -4,9 +4,9 @@ import kotlin.math.sqrt
 
 fun largestPrimeFactor() : Long = largestPrimeFactor(600851475143)
 
-fun largestPrimeFactor(number: Long) : Long = primeFactors(number).last()
+fun largestPrimeFactor(number: Long) : Long = distinctPrimeFactors(number).last()
 
-fun primeFactors(number : Long) : List<Long> {
+fun distinctPrimeFactors(number : Long) : List<Long> {
     val result = mutableSetOf<Long>()
     var intermediate = number
     for(divisor in 2 .. lsqrt(number)){

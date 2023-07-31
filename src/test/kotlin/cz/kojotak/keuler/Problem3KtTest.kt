@@ -10,7 +10,7 @@ internal class Problem3KtTest {
 
     @Test
     fun primeFactorOf13195(){
-        assertEquals( listOf(5L,7L,13L,29L), primeFactors(13195))
+        assertEquals( listOf(5L,7L,13L,29L), distinctPrimeFactors(13195))
     }
 
     @Test
