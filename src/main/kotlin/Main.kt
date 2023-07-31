@@ -9,4 +9,5 @@ fun main() {
     println("Problem 4: ${largestPalindromeProduct()}")
     println("Problem 5: ${smallestMultiple()}")
     println("Problem 6: ${sumSquareDifference()}")
+    println("Problem 7: ${prime10001()}")
 }

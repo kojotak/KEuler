@@ -19,3 +19,4 @@ fun distinctPrimeFactors(number : Long) : List<Long> {
 }
 
 fun lsqrt(number : Long) : Long = sqrt(number.toDouble()).toLong()
+fun isqrt(number : Int) : Int = sqrt(number.toDouble()).toInt()
