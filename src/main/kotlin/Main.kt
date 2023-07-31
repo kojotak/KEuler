@@ -8,4 +8,5 @@ fun main() {
     println("Problem 3: ${largestPrimeFactor()}")
     println("Problem 4: ${largestPalindromeProduct()}")
     println("Problem 5: ${smallestMultiple()}")
+    println("Problem 6: ${sumSquareDifference()}")
 }
