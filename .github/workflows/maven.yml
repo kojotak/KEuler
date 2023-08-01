@@ -20,5 +20,5 @@ jobs:
         if: always()
         with:
           files: |
-            target/failsafe-reports/*.xml
-            target/surefire-reports/*.xml
+            target/failsafe-reports/TEST*.xml
+            target/surefire-reports/TEST*.xml
