@@ -7,7 +7,6 @@ internal class Problem08KtTest{
 
     @Test
     fun largestProductInSeriesOfFour(){
-        val problem08 = Problem08()
-        assertEquals(5832, maxProductOfAdjacentDigits(4, problem08.number))
+        assertEquals(5832, Problem08().maxProductOfAdjacentDigits(4))
     }
 }

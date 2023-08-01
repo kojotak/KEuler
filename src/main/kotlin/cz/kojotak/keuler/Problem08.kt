@@ -2,7 +2,7 @@ package cz.kojotak.keuler
 
 class Problem08 : EulerProblem {
 
-    val number = """
+    private val bigNumber = """
         73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
 85861560789112949495459501737958331952853208805511
@@ -25,19 +25,20 @@ class Problem08 : EulerProblem {
 71636269561882670428252483600823257530420752963450
 """.replace("\\s".toRegex(), "")
 
-    override fun solve() =maxProductOfAdjacentDigits(13, number)
+    override fun solve() =maxProductOfAdjacentDigits(13)
+
+    fun maxProductOfAdjacentDigits(numberOfDigits: Int) : Long {
+        var max = -1L
+        for(index in 0 .. (bigNumber.length-numberOfDigits)){
+            var product = 1L
+            for( nthDigit in 0 until numberOfDigits){
+                product *= bigNumber[index+nthDigit].digitToInt()
+            }
+            if(product>max){
+                max = product
+            }
+        }
+        return max
+    }
 }
 
-fun maxProductOfAdjacentDigits(numberOfDigits: Int, bigNumber: String) : Long {
-    var max = -1L
-    for(index in 0 .. (bigNumber.length-numberOfDigits)){
-        var product = 1L
-        for( nthDigit in 0 until numberOfDigits){
-            product *= bigNumber[index+nthDigit].digitToInt()
-        }
-        if(product>max){
-            max = product
-        }
-    }
-    return max
-}
