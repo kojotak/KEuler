@@ -1,5 +1,6 @@
 package cz.kojotak.keuler
 
+import cz.kojotak.keuler.spi.EulerProblem
 import cz.kojotak.keuler.util.SieveOfEratosthenes
 
 class Problem10 : EulerProblem {

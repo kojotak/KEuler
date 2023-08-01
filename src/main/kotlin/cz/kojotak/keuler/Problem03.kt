@@ -1,8 +1,9 @@
 package cz.kojotak.keuler
 
+import cz.kojotak.keuler.spi.EulerProblem
 import kotlin.math.sqrt
 
-class Problem03 : EulerProblem{
+class Problem03 : EulerProblem {
     override fun solve()= largestPrimeFactor(600851475143)
 }
 

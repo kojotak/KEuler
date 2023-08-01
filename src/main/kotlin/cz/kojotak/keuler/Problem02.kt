@@ -1,5 +1,7 @@
 package cz.kojotak.keuler
 
+import cz.kojotak.keuler.spi.EulerProblem
+
 class Problem02 : EulerProblem {
     override fun solve(): Long {
         var sum = 0L

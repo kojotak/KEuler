@@ -1,6 +1,9 @@
 package cz.kojotak.keuler
 
-class Problem04 : EulerProblem{
+import cz.kojotak.keuler.spi.EulerProblem
+import cz.kojotak.keuler.spi.SolutionNotFoundException
+
+class Problem04 : EulerProblem {
     override fun solve(): Long {
         var largestPalindrome = -1L
         for(i in 999L downTo 100L){

@@ -1,5 +1,8 @@
 package cz.kojotak.keuler
 
+import cz.kojotak.keuler.spi.EulerProblem
+import cz.kojotak.keuler.spi.SolutionNotFoundException
+
 class Problem09 : EulerProblem {
     override fun solve(): Long {
         for(a in 1L.. (1000-1-2-3)){

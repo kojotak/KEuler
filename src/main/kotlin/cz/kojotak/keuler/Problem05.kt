@@ -1,7 +1,10 @@
 package cz.kojotak.keuler
 
+import cz.kojotak.keuler.spi.EulerProblem
+import cz.kojotak.keuler.spi.SolutionNotFoundException
 
-class Problem05 : EulerProblem{
+
+class Problem05 : EulerProblem {
     override fun solve() = smallestEvenlyDivisible(20)
 
 }

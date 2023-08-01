@@ -1,5 +1,7 @@
 package cz.kojotak.keuler
 
+import cz.kojotak.keuler.spi.EulerProblem
+
 class Problem08 : EulerProblem {
 
     private val bigNumber = """

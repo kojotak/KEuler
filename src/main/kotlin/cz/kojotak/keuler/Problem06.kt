@@ -1,5 +1,7 @@
 package cz.kojotak.keuler
 
+import cz.kojotak.keuler.spi.EulerProblem
+
 class Problem06 : EulerProblem {
     override fun solve() = sumSquareDifference(100)
 }

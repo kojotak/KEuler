@@ -1,6 +1,6 @@
 package cz.kojotak.keuler.util
 
-import cz.kojotak.keuler.SolutionNotFoundException
+import cz.kojotak.keuler.spi.SolutionNotFoundException
 import cz.kojotak.keuler.isqrt
 
 class SieveOfEratosthenes(size: Int) {
