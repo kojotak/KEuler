@@ -27,84 +27,14 @@ class Problem11 : EulerProblem {
         20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
         01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
     """.trimIndent())
-    override fun solve() = largestProduct(4)
 
-    fun largestProduct(size: Int)= listOf(
-        largestInColumn(size),
-        largestInRow(size),
-        largestInRightDiagonal(size),
-        largestInLeftDiagonal(size)
+    private val size = 4
+
+    override fun solve() = listOf(
+        grid.largestProductInColumns(size),
+        grid.largestProductInRow(size),
+        grid.largestProductInRightDiagonal(size),
+        grid.largestProductInLeftDiagonal(size)
     ).max()
 
-    fun largestInLeftDiagonal(size: Int) : Long {
-        val rows = grid.size
-        val cols = grid[0].size
-        var largestInColumn = -1L
-        for(c in size until cols-1){
-            for(r in 0 until rows-size-1){
-                var product = 1L
-                for(i in 0 until size){
-                    product *= grid[c-i][r+i]
-                }
-                if(product > largestInColumn){
-                    largestInColumn = product
-                }
-            }
-        }
-        return largestInColumn
-    }
-
-    fun largestInRightDiagonal(size: Int) : Long {
-        val rows = grid.size
-        val cols = grid[0].size
-        var largestInColumn = -1L
-        for(c in 0 until cols-size-1){
-            for(r in 0 until rows-size-1){
-                var product = 1L
-                for(i in 0 until size){
-                    product *= grid[c+i][r+i]
-                }
-                if(product > largestInColumn){
-                    largestInColumn = product
-                }
-            }
-        }
-        return largestInColumn
-    }
-
-    fun largestInColumn(size: Int) : Long {
-        val rows = grid.size
-        val cols = grid[0].size
-        var largestInColumn = -1L
-        for(c in 0 until cols){
-            for(r in 0 until rows-size-1){
-                var product = 1L
-                for(i in 0 until size){
-                    product *= grid[c][r+i]
-                }
-                if(product > largestInColumn){
-                    largestInColumn = product
-                }
-            }
-        }
-        return largestInColumn
-    }
-
-    fun largestInRow(size: Int) : Long {
-        val rows = grid.size
-        val cols = grid[0].size
-        var largestInRow = -1L
-        for(r in 0 until rows){
-            for(c in 0 until cols-size-1){
-                var product = 1L
-                for(i in 0 until size){
-                    product *= grid[c+i][r]
-                }
-                if(product > largestInRow){
-                    largestInRow = product
-                }
-            }
-        }
-        return largestInRow
-    }
 }

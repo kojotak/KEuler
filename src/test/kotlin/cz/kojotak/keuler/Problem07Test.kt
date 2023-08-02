@@ -4,10 +4,10 @@ import cz.kojotak.keuler.util.SieveOfEratosthenes
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
-internal class Problem10KtTest{
+internal class Problem07Test{
 
     @Test
-    fun summationOfPrimesBellow10(){
-        assertEquals(17, SieveOfEratosthenes(10).primes().sum())
+    fun primeNumberInSieveOfEratosthenes6th(){
+        assertEquals(13, SieveOfEratosthenes(1_000).nthPrimeNumber(6))
     }
 }
