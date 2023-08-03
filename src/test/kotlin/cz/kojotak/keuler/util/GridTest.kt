@@ -63,7 +63,7 @@ internal class GridTest {
         assertEquals(9, sampleGrid().largestProductInRightDiagonal(1))
     }
 
-    fun sampleGrid() = readGrid("""
+    private fun sampleGrid() = readGrid("""
         1 2 3
         4 5 6
         7 8 9

@@ -9,8 +9,8 @@ class Problem09 : EulerProblem {
             for(b in (a+1) ..  (1000-1-a)){
                 val summedSquares = a*a + b*b
                 val c = 1000 - a - b
-                val squeredC = c*c
-                if(summedSquares == squeredC){
+                val squaredC = c*c
+                if(summedSquares == squaredC){
                     return a * b * c
                 }
             }
