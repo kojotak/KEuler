@@ -1,25 +1,14 @@
 package cz.kojotak.keuler
 
 import cz.kojotak.keuler.spi.EulerProblem
+import cz.kojotak.keuler.util.primeFactors
 import kotlin.math.sqrt
 
 class Problem03 : EulerProblem {
     override fun solve()= largestPrimeFactor(600851475143)
 }
-
-fun largestPrimeFactor(number: Long) : Long = distinctPrimeFactors(number).last()
-
-fun distinctPrimeFactors(number : Long) : List<Long> {
-    val result = mutableSetOf<Long>()
-    var intermediate = number
-    for(divisor in 2 .. lsqrt(number)){
-        if(intermediate % divisor == 0L){
-            intermediate /= divisor
-            result.add(divisor)
-        }
-    }
-    return result.sorted()
-}
+fun distinctPrimeFactors(number: Long) : List<Long> = primeFactors(number).distinct()
+fun largestPrimeFactor(number: Long) : Long = distinctPrimeFactors(number).maxOf { it }
 
 fun lsqrt(number : Long) : Long = sqrt(number.toDouble()).toLong()
 fun isqrt(number : Int) : Int = sqrt(number.toDouble()).toInt()
