@@ -1,5 +1,7 @@
 package cz.kojotak.keuler.util
 
+import cz.kojotak.keuler.lsqrt
+
 fun primeFactorsAsMap(number: Long): Map<Long,Int> {
     val result = mutableMapOf<Long,Int>()
     for(factor in primeFactors(number)){
@@ -25,4 +27,16 @@ fun primeFactors(number: Long) : List<Long> {
         }
     }
     return primeFactors
+}
+
+fun distinctPrimeFactors(number : Long) : List<Long> {
+    val result = mutableSetOf<Long>()
+    var intermediate = number
+    for(divisor in 2 .. lsqrt(number)){
+        if(intermediate % divisor == 0L){
+            intermediate /= divisor
+            result.add(divisor)
+        }
+    }
+    return result.sorted()
 }

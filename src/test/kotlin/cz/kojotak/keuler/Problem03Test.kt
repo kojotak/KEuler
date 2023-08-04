@@ -1,5 +1,6 @@
 package cz.kojotak.keuler
 
+import cz.kojotak.keuler.util.distinctPrimeFactors
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
