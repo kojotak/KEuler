@@ -28,7 +28,8 @@ class SolutionsIT {
             of(Problem08::class.java, 23514624000),
             of(Problem09::class.java, 31875000),
             of(Problem10::class.java, 142913828922),
-            of(Problem11::class.java, 70600674)
+            of(Problem11::class.java, 70600674),
+            of(Problem13::class.java, 5537376230)
         )
     }
 }
