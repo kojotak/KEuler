@@ -4,12 +4,12 @@ import cz.kojotak.keuler.spi.EulerProblem
 
 class Problem14 : EulerProblem {
     override fun solve(): Long {
-        val collatzSequenceLenghts = LongArray(1_000_000)
+        val collatzSequenceLengths = LongArray(1_000_000)
         var max=-1
         var maxIndex=-1
-        for(i in collatzSequenceLenghts.indices){
+        for(i in collatzSequenceLengths.indices){
             val seq = collatzSequence(i.toLong())
-            collatzSequenceLenghts[i] = seq.size.toLong()
+            collatzSequenceLengths[i] = seq.size.toLong()
             if(seq.size>max){
                 max = seq.size
                 maxIndex = i
