@@ -13,11 +13,10 @@ class Problem14 : EulerProblem {
             }
             val seq = collatzSequence(i.toLong())
             collatzSequenceLengths[i] = seq.size.toLong()
-            for(idx in seq.indices){
+            for( (index,value) in seq.withIndex()){
                 //remember intermediate results to speed up other lookups
-                val number = seq[idx]
-                if(number < collatzSequenceLengths.size){
-                    collatzSequenceLengths[number.toInt()] = seq.size.toLong() - idx
+                if(value < collatzSequenceLengths.size){
+                    collatzSequenceLengths[value.toInt()] = seq.size.toLong() - index
                 }
                 collatzSequenceLengths[i] = seq.size.toLong()
             }
@@ -40,11 +39,8 @@ class Problem14 : EulerProblem {
         return sequence
     }
 
-    private fun next(n: Long) =
-        if (n % 2 == 0L) {
-            n / 2
-        } else {
-            3 * n + 1
+    private fun next(n: Long) = when(n % 2){
+            0L -> n/2
+            else -> 3*n +1
         }
-
 }
