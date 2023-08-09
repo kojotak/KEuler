@@ -2,14 +2,17 @@ package cz.kojotak.keuler
 
 import cz.kojotak.keuler.spi.EulerProblem
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Timeout
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
+import java.util.concurrent.TimeUnit
 
 class SolutionsIT {
 
     @ParameterizedTest
     @MethodSource
+    @Timeout(value=1, unit = TimeUnit.SECONDS)
     fun checkSolution(problem: Class<EulerProblem>, expectedSolution: Long) {
         val actualSolution = problem.getDeclaredConstructor().newInstance().solve()
         Assertions.assertEquals(expectedSolution, actualSolution)
