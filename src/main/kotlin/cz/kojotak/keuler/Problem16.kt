@@ -10,9 +10,9 @@ class Problem16 : EulerProblem {
         for(multiplier in 0 until  exponent){
             var overflowed = false
             for(index in digits.indices){
-                val multiplied = digits[index]*2 + booleanToInt(overflowed)
-                digits[index] = multiplied % 10
-                overflowed = multiplied >= 10
+                val newValue = digits[index]*2 + booleanToInt(overflowed)
+                digits[index] = newValue % 10
+                overflowed = newValue >= 10
             }
             if(overflowed){
                 digits.add(1)

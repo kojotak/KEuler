@@ -34,7 +34,8 @@ class SolutionsIT {
             of(Problem11::class.java, 70600674),
             of(Problem13::class.java, 5537376230),
             of(Problem14::class.java, 837799),
-            of(Problem16::class.java, 1366)
+            of(Problem16::class.java, 1366),
+            of(Problem17::class.java, 21124)
         )
     }
 }

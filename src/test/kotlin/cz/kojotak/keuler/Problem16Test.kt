@@ -8,14 +8,14 @@ import org.junit.jupiter.params.provider.MethodSource
 internal class Problem16Test{
 
     @ParameterizedTest
-    @MethodSource("lsqrtSources")
+    @MethodSource("powerDigitSumArguments")
     fun powerDigitSumTest(expectedSum: Long, exponent: Int) {
         assertEquals(expectedSum, Problem16().powerDigitSum(exponent))
     }
 
     companion object{
         @JvmStatic
-        fun lsqrtSources() = listOf(
+        fun powerDigitSumArguments() = listOf(
             Arguments.of(2, 1),
             Arguments.of(4, 2),
             Arguments.of(8, 3),
