@@ -52,7 +52,6 @@ class Problem17 : EulerProblem {
         else -> throw IllegalArgumentException("invalid $digit for tensDigitToNumeral")
     }
 
-
     private fun teenToNumeral(number: Int) = when(number){
         10 -> "ten"
         11 -> "eleven"
@@ -64,7 +63,7 @@ class Problem17 : EulerProblem {
         17 -> "seventeen"
         18 -> "eighteen"
         19 -> "nineteen"
-        else -> throw IllegalArgumentException("$number is not a teen number")
+        else -> throw IllegalArgumentException("invalid $number for teenToNumeral")
     }
 
     private fun digitToNumeral(digit: Int) = when(digit){
@@ -78,6 +77,6 @@ class Problem17 : EulerProblem {
         7 -> "seven"
         8 -> "eight"
         9 -> "nine"
-        else -> throw IllegalArgumentException("$digit is not a single numeral")
+        else -> throw IllegalArgumentException("invalid $digit for digitToNumeral")
     }
 }
