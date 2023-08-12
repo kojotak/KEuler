@@ -10,5 +10,5 @@ class Problem03 : EulerProblem {
 
 fun largestPrimeFactor(number: Long) = distinctPrimeFactors(number).last()
 
-fun lsqrt(number : Long) = sqrt(number.toDouble()).toLong()
-fun isqrt(number : Int) = sqrt(number.toDouble()).toInt()
+fun lsqrt(number: Long) = sqrt(number.toDouble()).toLong()
+fun isqrt(number: Int) = sqrt(number.toDouble()).toInt()

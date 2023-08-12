@@ -6,10 +6,10 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
 
-class Problem17Test{
+class Problem17Test {
 
     @Test
-    fun sumNumberLettersTo5(){
+    fun sumNumberLettersTo5() {
         assertEquals(19, Problem17().sumLettersOfNumbersTo(5))
     }
 
@@ -25,7 +25,7 @@ class Problem17Test{
         assertEquals(expectedNumeral, Problem17().numberToNumeral(number))
     }
 
-    companion object{
+    companion object {
         @JvmStatic
         fun numberLetterCountArguments() = listOf(
             Arguments.of(3, 1),

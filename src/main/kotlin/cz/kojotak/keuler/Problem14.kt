@@ -4,18 +4,18 @@ import cz.kojotak.keuler.spi.EulerProblem
 
 class Problem14 : EulerProblem {
     override fun solve(): Long {
-        val collatzSequenceLengths = LongArray(1_000_000){0}
+        val collatzSequenceLengths = LongArray(1_000_000) { 0 }
         var max = -1
         var maxIndex = -1
         for (i in collatzSequenceLengths.indices.reversed()) {
-            if(collatzSequenceLengths[i]>0){
+            if (collatzSequenceLengths[i] > 0) {
                 continue
             }
             val seq = collatzSequence(i.toLong())
             collatzSequenceLengths[i] = seq.size.toLong()
-            for( (index,value) in seq.withIndex()){
-                //remember intermediate results to speed up other lookups
-                if(value < collatzSequenceLengths.size){
+            for ((index, value) in seq.withIndex()) {
+                // remember intermediate results to speed up other lookups
+                if (value < collatzSequenceLengths.size) {
                     collatzSequenceLengths[value.toInt()] = seq.size.toLong() - index
                 }
                 collatzSequenceLengths[i] = seq.size.toLong()
@@ -39,8 +39,8 @@ class Problem14 : EulerProblem {
         return sequence
     }
 
-    private fun next(n: Long) = when(n % 2){
-            0L -> n/2
-            else -> 3*n +1
-        }
+    private fun next(n: Long) = when (n % 2) {
+        0L -> n / 2
+        else -> 3 * n + 1
+    }
 }

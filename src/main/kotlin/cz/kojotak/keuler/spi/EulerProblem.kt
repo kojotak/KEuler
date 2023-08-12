@@ -6,6 +6,6 @@ interface EulerProblem {
     fun solve(): Long
 }
 
-class SolutionNotFoundException(message: String?) : RuntimeException(message){
-    constructor(): this("")
+class SolutionNotFoundException(message: String?) : RuntimeException(message) {
+    constructor() : this("")
 }

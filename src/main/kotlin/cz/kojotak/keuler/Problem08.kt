@@ -27,20 +27,19 @@ class Problem08 : EulerProblem {
 71636269561882670428252483600823257530420752963450
 """.replace("\\s".toRegex(), "")
 
-    override fun solve() =maxProductOfAdjacentDigits(13)
+    override fun solve() = maxProductOfAdjacentDigits(13)
 
-    fun maxProductOfAdjacentDigits(numberOfDigits: Int) : Long {
+    fun maxProductOfAdjacentDigits(numberOfDigits: Int): Long {
         var max = -1L
-        for(index in 0 .. (bigNumber.length-numberOfDigits)){
+        for (index in 0..(bigNumber.length - numberOfDigits)) {
             var product = 1L
-            for( nthDigit in 0 until numberOfDigits){
-                product *= bigNumber[index+nthDigit].digitToInt()
+            for (nthDigit in 0 until numberOfDigits) {
+                product *= bigNumber[index + nthDigit].digitToInt()
             }
-            if(product>max){
+            if (product > max) {
                 max = product
             }
         }
         return max
     }
 }
-

@@ -12,13 +12,13 @@ class SolutionsIT {
 
     @ParameterizedTest
     @MethodSource
-    @Timeout(value=1, unit = TimeUnit.SECONDS)
+    @Timeout(value = 1, unit = TimeUnit.SECONDS)
     fun checkSolution(problem: Class<EulerProblem>, expectedSolution: Long) {
         val actualSolution = problem.getDeclaredConstructor().newInstance().solve()
         Assertions.assertEquals(expectedSolution, actualSolution)
     }
 
-    companion object{
+    companion object {
         @JvmStatic
         fun checkSolution() = listOf(
             of(Problem01::class.java, 233168),

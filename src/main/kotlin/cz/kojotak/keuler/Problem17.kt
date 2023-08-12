@@ -21,24 +21,24 @@ class Problem17 : EulerProblem {
 
     private fun numberOfLetters(string: String) = string.filter { it.isLetter() }.length
 
-    private fun thousandsToNumeral(number: Int) : String {
+    private fun thousandsToNumeral(number: Int): String {
         val thousands = number / 1000
         val remainder = number % 1000
-        return digitToNumeral(thousands) + " thousand" + if(remainder>0) " and " + numberToNumeral(remainder) else ""
+        return digitToNumeral(thousands) + " thousand" + if (remainder > 0) " and " + numberToNumeral(remainder) else ""
     }
-    private fun hundredsToNumeral(number: Int) : String {
+    private fun hundredsToNumeral(number: Int): String {
         val hundreds = number / 100
         val remainder = number % 100
-        return digitToNumeral(hundreds) + " hundred" + if(remainder>0) " and " + numberToNumeral(remainder) else ""
+        return digitToNumeral(hundreds) + " hundred" + if (remainder > 0) " and " + numberToNumeral(remainder) else ""
     }
 
-    private fun tensToNumeral(number: Int) : String {
+    private fun tensToNumeral(number: Int): String {
         val tens = number / 10
         val remainder = number % 10
-        return tensDigitToNumeral(tens) + if(remainder > 0) "-" + numberToNumeral(remainder) else ""
+        return tensDigitToNumeral(tens) + if (remainder > 0) "-" + numberToNumeral(remainder) else ""
     }
 
-    private fun tensDigitToNumeral(digit: Int) = when(digit) {
+    private fun tensDigitToNumeral(digit: Int) = when (digit) {
         0 -> ""
         1 -> "ten"
         2 -> "twenty"
@@ -52,7 +52,7 @@ class Problem17 : EulerProblem {
         else -> throw IllegalArgumentException("invalid $digit for tensDigitToNumeral")
     }
 
-    private fun teenToNumeral(number: Int) = when(number){
+    private fun teenToNumeral(number: Int) = when (number) {
         10 -> "ten"
         11 -> "eleven"
         12 -> "twelve"
@@ -66,7 +66,7 @@ class Problem17 : EulerProblem {
         else -> throw IllegalArgumentException("invalid $number for teenToNumeral")
     }
 
-    private fun digitToNumeral(digit: Int) = when(digit){
+    private fun digitToNumeral(digit: Int) = when (digit) {
         0 -> ""
         1 -> "one"
         2 -> "two"

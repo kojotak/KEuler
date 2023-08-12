@@ -6,10 +6,10 @@ import cz.kojotak.keuler.spi.SolutionNotFoundException
 class Problem04 : EulerProblem {
     override fun solve(): Long {
         var largestPalindrome = -1L
-        for(i in 999L downTo 100L){
-            for(j in 999L downTo 100L){
-                val product  = i * j
-                if(isPalindrome(product) && product > largestPalindrome){
+        for (i in 999L downTo 100L) {
+            for (j in 999L downTo 100L) {
+                val product = i * j
+                if (isPalindrome(product) && product > largestPalindrome) {
                     largestPalindrome = product
                 }
             }
@@ -18,11 +18,11 @@ class Problem04 : EulerProblem {
     }
 }
 
-fun isPalindrome(number: Number) : Boolean = isPalindrome(number.toString())
+fun isPalindrome(number: Number): Boolean = isPalindrome(number.toString())
 
-fun isPalindrome(string : String) : Boolean {
-    for(i in 0..string.length/2){
-        if(string[i] != string[string.length-i-1]){
+fun isPalindrome(string: String): Boolean {
+    for (i in 0..string.length / 2) {
+        if (string[i] != string[string.length - i - 1]) {
             return false
         }
     }

@@ -6,12 +6,12 @@ class Problem06 : EulerProblem {
     override fun solve() = sumSquareDifference(100)
 }
 
-fun sumSquareDifference(size: Int) : Long {
+fun sumSquareDifference(size: Int): Long {
     var sumOfSquares = 0L
     var sum = 0
-    for(i in 1 .. size){
+    for (i in 1..size) {
         sum += i
-        sumOfSquares += (i*i)
+        sumOfSquares += (i * i)
     }
-    return (sum*sum) - sumOfSquares
+    return (sum * sum) - sumOfSquares
 }
