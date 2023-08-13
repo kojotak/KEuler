@@ -3,7 +3,7 @@ package cz.kojotak.keuler
 import cz.kojotak.keuler.spi.EulerProblem
 import kotlin.math.max
 
-class Problem18 : EulerProblem {
+open class Problem18 : EulerProblem {
 
     private val triangle = """
         75
