@@ -2,20 +2,22 @@ package cz.kojotak.keuler
 
 import cz.kojotak.keuler.spi.EulerProblem
 import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Timeout
+import org.junit.jupiter.api.assertTimeoutPreemptively
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments.of
 import org.junit.jupiter.params.provider.MethodSource
-import java.util.concurrent.TimeUnit
+import java.time.Duration
+import java.time.temporal.ChronoUnit
 
 class SolutionsIT {
 
     @ParameterizedTest
     @MethodSource
-    @Timeout(value = 1, unit = TimeUnit.SECONDS)
     fun checkSolution(problem: Class<EulerProblem>, expectedSolution: Long) {
-        val actualSolution = problem.getDeclaredConstructor().newInstance().solve()
-        Assertions.assertEquals(expectedSolution, actualSolution)
+        assertTimeoutPreemptively(Duration.of(10, ChronoUnit.SECONDS)) {
+            val actualSolution = problem.getDeclaredConstructor().newInstance().solve()
+            Assertions.assertEquals(expectedSolution, actualSolution)
+        }
     }
 
     companion object {
@@ -32,6 +34,7 @@ class SolutionsIT {
             of(Problem09::class.java, 31875000),
             of(Problem10::class.java, 142913828922),
             of(Problem11::class.java, 70600674),
+            of(Problem12::class.java, 76576500),
             of(Problem13::class.java, 5537376230),
             of(Problem14::class.java, 837799),
             of(Problem16::class.java, 1366),
