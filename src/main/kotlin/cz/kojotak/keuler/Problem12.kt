@@ -15,9 +15,12 @@ class Problem12 : EulerProblem {
         }
     }
 
-    fun factors(number: Long) = 1.rangeTo(number).filter { number % it == 0L }.toList()
+    fun factorsSize(number: Long) = 1.rangeTo(lsqrt(number))
+        .filter { number % it == 0L }
+        .map { if (number / it == it) 1 else 2 } // 9=3*3, but but 8=4*2
+        .sum()
 
     fun firstTriangleNumberWithMoreThanDivisors(divisors: Int) = triangleNumbers.filter {
-        factors(it).size >= divisors
+        factorsSize(it) >= divisors
     }.take(1).first()
 }

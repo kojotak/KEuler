@@ -23,7 +23,7 @@ class Problem12Test {
     @ParameterizedTest
     @MethodSource("factorsArguments")
     fun factors(input: Long, expectedFactors: List<Long>) {
-        assertContentEquals(expectedFactors, Problem12().factors(input))
+        assertEquals(expectedFactors.size, Problem12().factorsSize(input))
     }
 
     companion object {
