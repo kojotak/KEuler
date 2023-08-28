@@ -11,11 +11,8 @@ class Problem20BigInteger : EulerProblem {
 
     fun factorialDigitSum(number: Int): Long = bigDecimalToDigitArray(factorial(number)).sum().toLong()
 
-    fun factorial(number: Int): BigInteger {
-        var result = BigInteger.ONE
-        for (multiplier in 1L..number) {
-            result *= BigInteger.valueOf(multiplier)
-        }
-        return result
+    fun factorial(number: Int): BigInteger = (1..number).fold(BigInteger.ONE) {
+            acc, i ->
+        acc.multiply(BigInteger.valueOf(i.toLong()))
     }
 }
