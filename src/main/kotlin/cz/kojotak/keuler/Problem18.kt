@@ -44,10 +44,9 @@ open class Problem18 : EulerProblem {
         val triangle = Array(lines.size) {
             Array(lines.size) { 0 }
         }
-        for (index in lines.indices) {
-            val values = lines[index].split("\\s".toRegex())
-            for (value in values.indices) {
-                triangle[index][value] = values[value].toInt()
+        lines.forEachIndexed { lineIndex, line ->
+            line.split("\\s".toRegex()).forEachIndexed { wordIndex, word ->
+                triangle[lineIndex][wordIndex] = word.toInt()
             }
         }
         return triangle
