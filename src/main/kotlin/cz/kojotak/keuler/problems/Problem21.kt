@@ -7,14 +7,9 @@ class Problem21 : EulerProblem {
     override fun solve(): Long {
         val sumOfDivisors = sumOfDivisors(10_000)
 
-        var sumOfAmicableNumbers = 0L
-        for (a in sumOfDivisors.indices) {
-            val b = sumOfDivisors[a]
-            if (a != b && b < sumOfDivisors.size && a == sumOfDivisors[b]) {
-                sumOfAmicableNumbers += a
-            }
-        }
-        return sumOfAmicableNumbers
+        return sumOfDivisors
+            .filterIndexed { a, b -> a != b && b < sumOfDivisors.size && a == sumOfDivisors[b] }
+            .sum().toLong()
     }
 
     fun sumOfDivisors(limit: Int): IntArray {
