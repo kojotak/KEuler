@@ -1,6 +1,24 @@
 package cz.kojotak.keuler
 
-import cz.kojotak.keuler.spi.EulerProblem
+import cz.kojotak.keuler.problems.Problem01
+import cz.kojotak.keuler.problems.Problem02
+import cz.kojotak.keuler.problems.Problem03
+import cz.kojotak.keuler.problems.Problem04
+import cz.kojotak.keuler.problems.Problem05
+import cz.kojotak.keuler.problems.Problem06
+import cz.kojotak.keuler.problems.Problem07
+import cz.kojotak.keuler.problems.Problem08
+import cz.kojotak.keuler.problems.Problem09
+import cz.kojotak.keuler.problems.Problem10
+import cz.kojotak.keuler.problems.Problem11
+import cz.kojotak.keuler.problems.Problem12
+import cz.kojotak.keuler.problems.Problem13
+import cz.kojotak.keuler.problems.Problem14
+import cz.kojotak.keuler.problems.Problem16
+import cz.kojotak.keuler.problems.Problem17
+import cz.kojotak.keuler.problems.Problem18
+import cz.kojotak.keuler.problems.Problem20
+import cz.kojotak.keuler.problems.Problem67
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.assertTimeoutPreemptively
 import org.junit.jupiter.params.ParameterizedTest
