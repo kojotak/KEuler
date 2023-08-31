@@ -3,19 +3,22 @@ package cz.kojotak.keuler.problems
 import cz.kojotak.keuler.EulerProblem
 import java.time.DayOfWeek
 import java.time.LocalDate
-import java.util.stream.Stream
 
 class Problem19 : EulerProblem {
-    override fun solve(): Long {
-        val date = LocalDate.of(1901, 1, 1)
-        val end = LocalDate.of(2000, 12, 31)
 
-        return Stream.iterate(
-            date,
-            { it.isBefore(end) },
-            { it.plusMonths(1) }
-        )
-            .filter { it.dayOfWeek == DayOfWeek.SUNDAY }
-            .count()
+    private val startDate = LocalDate.of(1901, 1, 1)
+    private val endDate = LocalDate.of(2000, 12, 31)
+
+    private val days = sequence<LocalDate> {
+        var date = startDate
+
+        while (date.isBefore(endDate)) {
+            yield(date)
+            date = date.plusMonths(1)
+        }
     }
+
+    override fun solve() = days
+        .filter { it.dayOfWeek == DayOfWeek.SUNDAY }
+        .count().toLong()
 }
