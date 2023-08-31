@@ -17,6 +17,7 @@ import cz.kojotak.keuler.problems.Problem14
 import cz.kojotak.keuler.problems.Problem16
 import cz.kojotak.keuler.problems.Problem17
 import cz.kojotak.keuler.problems.Problem18
+import cz.kojotak.keuler.problems.Problem19
 import cz.kojotak.keuler.problems.Problem20
 import cz.kojotak.keuler.problems.Problem21
 import cz.kojotak.keuler.problems.Problem22
@@ -60,6 +61,7 @@ class SolutionsIT {
             of(Problem16::class.java, 1366),
             of(Problem17::class.java, 21124),
             of(Problem18::class.java, 1074),
+            of(Problem19::class.java, 171),
             of(Problem20::class.java, 648),
             of(Problem21::class.java, 31626),
             of(Problem22::class.java, 871198282),
