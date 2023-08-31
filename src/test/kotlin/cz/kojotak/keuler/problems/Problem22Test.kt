@@ -7,7 +7,7 @@ import kotlin.test.assertTrue
 
 class Problem22Test {
 
-    val knownName = "COLIN"
+    private val knownName = "COLIN"
 
     @Test
     fun wordValueOfColin() {
