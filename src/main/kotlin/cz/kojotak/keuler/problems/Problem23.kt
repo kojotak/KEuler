@@ -15,13 +15,12 @@ class Problem23 : EulerProblem {
 
     fun isSumOfTwoAbundantNumbers(number: Int, abundantNumbers: List<Int>): Boolean {
         for (firstCandidate in abundantNumbers.reversed()) {
-            if (firstCandidate < number) {
-                for (secondCandidate in abundantNumbers) {
-                    val sum = firstCandidate + secondCandidate
-                    when {
-                        sum == number -> return true
-                        sum > number -> break
-                    }
+            if (firstCandidate >= number) continue
+            val diff = number - firstCandidate
+            for (secondCandidate in abundantNumbers) {
+                when {
+                    secondCandidate > diff -> break
+                    diff == secondCandidate -> return true
                 }
             }
         }
