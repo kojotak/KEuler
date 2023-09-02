@@ -21,6 +21,7 @@ import cz.kojotak.keuler.problems.Problem19
 import cz.kojotak.keuler.problems.Problem20
 import cz.kojotak.keuler.problems.Problem21
 import cz.kojotak.keuler.problems.Problem22
+import cz.kojotak.keuler.problems.Problem23
 import cz.kojotak.keuler.problems.Problem67
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.assertTimeoutPreemptively
@@ -65,6 +66,7 @@ class SolutionsIT {
             of(Problem20::class.java, 648),
             of(Problem21::class.java, 31626),
             of(Problem22::class.java, 871198282),
+            of(Problem23::class.java, 4179871),
             of(Problem67::class.java, 7273),
         )
     }
