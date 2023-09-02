@@ -55,3 +55,9 @@ fun distinctPrimeFactors(number: Long): List<Long> {
     }
     return result.sorted()
 }
+
+fun sumOfDivisorsForNumbers(limit: Int) = IntArray(limit + 1) { sumOfDivisorsForNumber(it) }
+
+fun sumOfDivisorsForNumber(number: Int) = (1 until number)
+    .filter { number % it == 0 }
+    .sum()
