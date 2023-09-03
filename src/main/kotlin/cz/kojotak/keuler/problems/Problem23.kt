@@ -14,15 +14,11 @@ class Problem23 : EulerProblem {
     }
 
     fun isSumOfTwoAbundantNumbers(number: Int, abundantNumbers: List<Int>): Boolean {
-        for (firstCandidate in abundantNumbers.reversed()) {
-            if (firstCandidate >= number) continue
-            val diff = number - firstCandidate
-            for (secondCandidate in abundantNumbers) {
-                when {
-                    secondCandidate > diff -> break
-                    diff == secondCandidate -> return true
-                }
-            }
+        for (firstIndex in abundantNumbers.reversed().indices) {
+            val firstAbundantNumber = abundantNumbers[firstIndex]
+            if (firstAbundantNumber >= number) continue
+            val secondAbundantNumber = abundantNumbers.binarySearch(number - firstAbundantNumber)
+            if (secondAbundantNumber >= 0) return true
         }
         return false
     }
