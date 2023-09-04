@@ -1,6 +1,7 @@
 package cz.kojotak.keuler.problems
 
 import cz.kojotak.keuler.EulerProblem
+import cz.kojotak.keuler.MAX_DECIMAL_NUMBER
 import java.lang.IllegalArgumentException
 
 class Problem17 : EulerProblem {
@@ -33,8 +34,8 @@ class Problem17 : EulerProblem {
     }
 
     private fun tensToNumeral(number: Int): String {
-        val tens = number / 10
-        val remainder = number % 10
+        val tens = number / MAX_DECIMAL_NUMBER
+        val remainder = number % MAX_DECIMAL_NUMBER
         return tensDigitToNumeral(tens) + if (remainder > 0) "-" + numberToNumeral(remainder) else ""
     }
 

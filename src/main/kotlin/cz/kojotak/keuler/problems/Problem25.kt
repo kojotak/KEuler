@@ -1,6 +1,7 @@
 package cz.kojotak.keuler.problems
 
 import cz.kojotak.keuler.EulerProblem
+import cz.kojotak.keuler.MAX_DECIMAL_NUMBER
 
 class Problem25 : EulerProblem {
     override fun solve() = indexOfFibonacciNumberContainingDigits(1000)
@@ -18,7 +19,7 @@ class Problem25 : EulerProblem {
         Triple(it.first + 1, it.third, addFibonacciNumbersAsIntArrays(it.second, it.third))
     }.map { Pair(it.first, it.second.reversedArray()) }
 
-    fun addFibonacciNumbersAsIntArrays(first: IntArray, second: IntArray): IntArray {
+    private fun addFibonacciNumbersAsIntArrays(first: IntArray, second: IntArray): IntArray {
         val length = Math.max(first.size, second.size)
         var result = IntArray(length) { 0 }
         for (index in 0 until length) {
@@ -28,8 +29,8 @@ class Problem25 : EulerProblem {
             if (index < second.size) {
                 result[index] += second[index]
             }
-            if (result[index] > 9) {
-                result[index] -= 10
+            if (result[index] >= MAX_DECIMAL_NUMBER) {
+                result[index] -= MAX_DECIMAL_NUMBER
                 if (index + 1 < result.size) {
                     result[index + 1] += 1
                 } else {

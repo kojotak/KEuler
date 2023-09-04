@@ -1,6 +1,7 @@
 package cz.kojotak.keuler.problems
 
 import cz.kojotak.keuler.EulerProblem
+import cz.kojotak.keuler.MAX_DECIMAL_NUMBER
 
 class Problem13 : EulerProblem {
 
@@ -123,8 +124,8 @@ class Problem13 : EulerProblem {
                     buffer[index + shift - 1] += 1
                 }
                 for (i in index + shift - 1 downTo 0) {
-                    if (buffer[i] >= 10) {
-                        buffer[i] -= 10
+                    if (buffer[i] >= MAX_DECIMAL_NUMBER) {
+                        buffer[i] -= MAX_DECIMAL_NUMBER
                         buffer[i - 1] += 1
                     } else {
                         break

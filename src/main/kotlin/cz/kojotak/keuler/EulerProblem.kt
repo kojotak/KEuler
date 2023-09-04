@@ -9,3 +9,5 @@ interface EulerProblem {
 class SolutionNotFoundException(message: String?) : RuntimeException(message) {
     constructor() : this("")
 }
+
+const val MAX_DECIMAL_NUMBER = 10

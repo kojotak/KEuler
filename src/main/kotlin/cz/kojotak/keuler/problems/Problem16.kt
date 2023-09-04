@@ -1,6 +1,7 @@
 package cz.kojotak.keuler.problems
 
 import cz.kojotak.keuler.EulerProblem
+import cz.kojotak.keuler.MAX_DECIMAL_NUMBER
 
 class Problem16 : EulerProblem {
     override fun solve() = powerDigitSum(1000)
@@ -11,8 +12,8 @@ class Problem16 : EulerProblem {
             var overflowed = false
             for (index in digits.indices) {
                 val newValue = digits[index] * 2 + booleanToInt(overflowed)
-                digits[index] = newValue % 10
-                overflowed = newValue >= 10
+                digits[index] = newValue % MAX_DECIMAL_NUMBER
+                overflowed = newValue >= MAX_DECIMAL_NUMBER
             }
             if (overflowed) {
                 digits.add(1)
