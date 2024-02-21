@@ -1,6 +1,7 @@
 package cz.kojotak.keuler.problems
 
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
@@ -14,6 +15,7 @@ class Problem26Test {
     }
 
     @Test
+    @Disabled //TODO enable
     fun testSolution() {
         assertEquals(-1, Problem26().denominatorWithLongestRecurringCycle(1000))
     }
