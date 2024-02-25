@@ -13,9 +13,7 @@ class Problem26 : EulerProblem {
 
     fun recurringCycle(number: Int): List<Int> {
         var numerator = 10
-        if(number>=100){
-            numerator *= 10
-        }
+        val divisors = mutableListOf<Int>()
         val reminders = mutableListOf<Int>()
         do {
             val divisor = numerator / number
@@ -23,27 +21,32 @@ class Problem26 : EulerProblem {
             if (reminder == 0) {
                 return emptyList()
             }
-            reminders.add(divisor)
-            val recurringCycle = recurringCycle(reminders)
+            divisors.add(divisor)
+            reminders.add(reminder)
+            val recurringCycle = recurringCycle(divisors, reminders)
             if (recurringCycle != null) {
+                println("$number $recurringCycle")
                 return recurringCycle
             }
             numerator = reminder * 10
         } while (true)
     }
 
-    private fun recurringCycle(list: List<Int>): List<Int>? {
-        if (list.size <= 1) {
+    private fun recurringCycle(divisors: List<Int>, reminders: List<Int>): List<Int>? {
+        if (divisors.size <= 1) {
             //not enough length to recur
             return null
         }
-        val half = list.size / 2
+        val half = divisors.size / 2
         for (length in 1..half) {
-            val reversed = list.reversed()
-            val one = reversed.subList(0, length)
-            val two = reversed.subList(length, length * 2)
-            if(one.equals(two)){
-                return one.reversed()
+            val reversedD = divisors.reversed()
+            val reversedR = reminders.reversed()
+            val firstD = reversedD.subList(0, length)
+            val firstR = reversedR.subList(0, length)
+            val secondD = reversedD.subList(length, length * 2)
+            val secondR = reversedR.subList(length, length * 2)
+            if(firstD.equals(secondD) && firstR.equals(secondR)){
+                return firstD.reversed()
             }
         }
         return null
